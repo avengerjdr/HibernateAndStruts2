@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="emp" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="empList" type="redirectAction">empList.action</result>
+		</global-results>
+		<action name="empList" class="com.woniu.action.EmpAction" method="findAll">
+			<result name="showempList">/empList.jsp</result>
+		</action>
+		<action name="empSave" class="com.woniu.action.EmpAction" method="save">
+		</action>
+		<action name="empDel" class="com.woniu.action.EmpAction" method="delete">
+		</action>
+		<action name="empUpdate" class="com.woniu.action.EmpAction" method="update">
+		</action>
+		<action name="empAddForm" class="com.woniu.action.EmpAction" method="addform">
+			<result name="addform">/empAdd.jsp</result>
+		</action>
+		<action name="empFindOne" class="com.woniu.action.EmpAction" method="findOne">
+			<result name="success">/empEdit.jsp</result>
+		</action>
+	</package>
+</struts>

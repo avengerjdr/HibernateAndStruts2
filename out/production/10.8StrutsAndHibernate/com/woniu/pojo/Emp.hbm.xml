@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.woniu.pojo">
+	<class name="Emp" table="emp">
+		<id name="empno" type="java.lang.Integer">
+			<column name="eid" />
+			<generator class="identity"></generator>
+		</id>
+		<property name="ename" column="ENAME"></property>
+		<property name="job" column="JOB"></property>
+		<property name="hiredate" column="HIREDATE"></property>
+		<property name="sal" column="SAL"></property>
+<!--		<property name="comm" column="COMM"></property>-->
+<!--		<many-to-one name="manager" column="MGR" class="Emp" ></many-to-one>-->
+<!--		<many-to-one name="dept" column="DEPTNO" class="Dept" ></many-to-one>-->
+	</class>
+</hibernate-mapping>

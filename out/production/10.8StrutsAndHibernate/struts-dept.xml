@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	
+<struts>
+	<package name="dept" namespace="/" extends="struts-default">
+	  <global-results>
+			<result name="DreturnList" type="redirectAction">deptList.action</result>
+		</global-results>
+		<action name="deptList" class="com.woniu.action.DeptAction" method="findAll">
+			<result name="showDept">/deptList.jsp</result>
+		</action>
+		<action name="deptSave" class="com.woniu.action.DeptAction" method="save">
+		</action>
+		<action name="deptDel" class="com.woniu.action.DeptAction" method="delete">
+		</action>
+		<action name="deptUpdate" class="com.woniu.action.DeptAction" method="update">
+		</action>
+		<action name="deptFindOne" class="com.woniu.action.DeptAction" method="findOne">
+			<result name="Dsuccess">/deptEdit.jsp</result>
+		</action> 
+	</package>
+</struts>

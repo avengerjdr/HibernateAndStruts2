@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+	<class name="com.woniu.pojo.Dept" table="dept">
+		<id name="deptno" type="java.lang.Integer">
+			<column name="deptno" />
+			<generator class="identity" />
+		</id>
+		<property name="dname" type="string">
+			<column name="dname" />
+		</property>
+		<property name="loc" type="string">
+			<column name="loc" />
+		</property>
+		<set name="emps" table="emp" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="deptno" not-null="true" />
+            </key>
+            <one-to-many class="com.woniu.pojo.Emp" />
+        </set> 
+	</class>
+</hibernate-mapping>
